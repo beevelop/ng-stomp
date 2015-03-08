@@ -6,9 +6,13 @@ module.exports = function (grunt) {
 					'ng-stomp.min.js': ['ng-stomp.js']
 				}
 			}
-		}
+		},
+        jshint: {
+            all: ['*.js', '!*.min.js']
+        }
  	});
 
  	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.registerTask('default', ['uglify']);
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.registerTask('default', ['jshint', 'uglify']);
 };
