@@ -1,6 +1,6 @@
 {
-  "name": "angular-stomp",
-  "version": "0.0.1-alpha.1",
+  "name": "ng-stomp",
+  "version": "0.0.1",
   "description": "STOMP for AngularJS",
   "main": "ng-stomp.js",
   "dependencies": {
@@ -20,7 +20,7 @@
   },
   "keywords": [
     "AngularJS",
-    "STOMP.",
+    "STOMP",
     "websocket"
   ],
   "author": "Maik Hummel <yo@beevelop.com>",

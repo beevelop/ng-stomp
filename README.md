@@ -4,11 +4,16 @@
 
 ## Installation
 
-Install via Bower:
+### Install via Bower:
 ```bash
-bower install --save ngStomp
+bower install --save ng-stomp
 ```
-
+---
+### Install via npm:
+```bash
+npm install --save ng-stomp
+```
+---
 Add SockJS + STOMP + (minified) Stompie:
 ```html
 <script src="/bower_components/sockjs/sockjs.min.js"></script>
