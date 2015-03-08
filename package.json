@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/beevelop/angular-stomp.git"
+    "url": "https://github.com/beevelop/ng-stomp.git"
   },
   "keywords": [
     "AngularJS",
@@ -26,7 +26,7 @@
   "author": "Maik Hummel <yo@beevelop.com>",
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/beevelop/angular-stomp/issues"
+    "url": "https://github.com/beevelop/ng-stomp/issues"
   },
-  "homepage": "https://github.com/beevelop/angular-stomp"
+  "homepage": "https://github.com/beevelop/ng-stomp"
 }
