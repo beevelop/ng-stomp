@@ -37,29 +37,40 @@ angular
     }
 ```
 
+## Example
 Use and subscribe:
 ```js
-//frame = CONNECTED headers
-$stomp.connect('/endpoint', connectHeaders, function (frame) {
-
-    var subscription = $stomp.subscribe('/dest', function (payload, headers, res) {
-        $scope.payload = payload;
-    });
-
-    // Unsubscribe
-    subscription.unsubscribe();
-
-    // Send messages to a STOMP broker.
-    $stomp.send('/dest', {
-        message: 'body'
-    }, {
-        priority: 9,
-        custom: 42 //Custom Headers
-    });
-
-    // Disconnect
-    $stomp.disconnect(function () {
-        
-    });
+// redirect debug
+$stomp.setDebug(function (args) {
+    document.getElementById('log').value += args + '\n';
 });
+
+$stomp
+    .connect('/endpoint', connectHeaders)
+
+    // frame = CONNECTED headers
+    .then(function (frame) {
+
+        var subscription = $stomp.subscribe('/dest', function (payload, headers, res) {
+            $scope.payload = payload;
+        }, {
+            "headers": "are awesome"
+        });
+
+        // Unsubscribe
+        subscription.unsubscribe();
+
+        // Send message
+        $stomp.send('/dest', {
+            message: 'body'
+        }, {
+            priority: 9,
+            custom: 42 //Custom Headers
+        });
+
+        // Disconnect
+        $stomp.disconnect(function () {
+
+        });
+    });
 ```
