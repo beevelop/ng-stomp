@@ -4,24 +4,24 @@
 
 ## Installation
 
-### Install via Bower:
+#### Install via Bower:
 ```bash
 bower install --save ng-stomp
 ```
----
-### Install via npm:
+----
+#### Install via npm:
 ```bash
 npm install --save ng-stomp
 ```
----
-Add SockJS + STOMP + (minified) Stompie:
+----
+#### Add SockJS + STOMP + (minified) Stompie:
 ```html
 <script src="/bower_components/sockjs/sockjs.min.js"></script>
 <script src="/bower_components/stomp-websocket/lib/stomp.min.js"></script>
 <script src="/bower_components/stompie/stompie.min.js"></script>
 ```
-
-Declare the module as a dependency in your application:
+----
+#### Declare the module as a dependency in your application:
 ```js
 angular.module('yourApp', ['ngStomp']);
 ```
@@ -31,8 +31,8 @@ angular.module('yourApp', ['ngStomp']);
 Inject it in your controller:
 ```js
 angular
-    .module('yourApp')
-    .controller('YourCtrl', ['$stomp', '$scope', function ($stomp, $scope) {
+    .module('app')
+    .controller('Ctrl', ['$stomp', '$scope', function ($stomp, $scope) {
         // ...
     }
 ```
@@ -40,27 +40,26 @@ angular
 Use and subscribe:
 ```js
 //frame = CONNECTED headers
-$stompie.using('/endpoint', function (frame) {
-    // The $scope bindings are updated for you so no need to $scope.$apply.
-    // The subscription object is returned by the method.
-    var subscription = $stompie.subscribe('/your/topic', function (data) {
-        $scope.foo = data;
+$stomp.connect('/endpoint', connectHeaders, function (frame) {
+
+    var subscription = $stomp.subscribe('/dest', function (payload, headers, res) {
+        $scope.payload = payload;
     });
 
-    // Unsubscribe using said subscription object.
+    // Unsubscribe
     subscription.unsubscribe();
 
     // Send messages to a STOMP broker.
-    $stompie.send('/some/queue', {
-        message: 'some message'
+    $stomp.send('/dest', {
+        message: 'body'
     }, {
         priority: 9,
         custom: 42 //Custom Headers
     });
 
-    // Disconnect from the socket.
-    $stompie.disconnect(function () {
-        // Called once you're out...
+    // Disconnect
+    $stomp.disconnect(function () {
+        
     });
 });
 ```
