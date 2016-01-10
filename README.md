@@ -26,7 +26,7 @@ npm install --save ng-stomp
 ```html
 <script src="/bower_components/sockjs/sockjs.min.js"></script>
 <script src="/bower_components/stomp-websocket/lib/stomp.min.js"></script>
-<script src="/bower_components/stompie/stompie-min.js"></script>
+<script src="/bower_components/ng-stomp/ng-stomp.min.js"></script>
 ```
 ----
 #### Declare the module as a dependency in your application:

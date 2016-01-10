@@ -21,7 +21,6 @@
   ],
   "dependencies": {
     "sockjs": "0.3.4",
-    "stomp-websocket": "2.3.4",
-    "stompie": "0.0.5"
+    "stomp-websocket": "2.3.4"
   }
 }

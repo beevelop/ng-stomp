@@ -10,7 +10,6 @@ module.exports = function (grunt) {
           'ng-stomp.standalone.min.js': [
             'bower_components/sockjs/sockjs.min.js',
             'bower_components/stomp-websocket/lib/stomp.min.js',
-            'bower_components/stompie/stompie-min.js',
             'ng-stomp.js'
           ]
         }
