@@ -1,9 +1,9 @@
 {
   "name": "ng-stomp",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "homepage": "https://github.com/beevelop/ng-stomp",
   "authors": [
-    "Maik Hummel <yo@beevelop.com>"
+    "Maik Hummel <m@ikhummel.com>"
   ],
   "description": "STOMP for AngularJS",
   "main": "ng-stomp.js",
@@ -11,7 +11,7 @@
     "STOMP",
     "websockets"
   ],
-  "license": "WTFPL",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -20,7 +20,8 @@
     "tests"
   ],
   "dependencies": {
-    "sockjs": "*",
-    "stomp-websocket": "*"
+    "sockjs": "0.3.4",
+    "stomp-websocket": "2.3.4",
+    "stompie": "0.0.5"
   }
 }
