@@ -1,9 +1,10 @@
-[![npm](https://img.shields.io/npm/l/ng-stomp.svg?style=flat-square)](http://www.wtfpl.net/txt/copying/)
 [![npm](https://img.shields.io/npm/v/ng-stomp.svg?style=flat-square)](https://www.npmjs.com/package/ng-stomp)
 [![Bower](https://img.shields.io/bower/v/ng-stomp.svg?style=flat-square)](#bower)
 [![Travis](https://img.shields.io/travis/beevelop/ng-stomp.svg?style=flat-square)](https://travis-ci.org/beevelop/ng-stomp)
 [![Code Climate](https://img.shields.io/codeclimate/github/beevelop/ng-stomp.svg?style=flat-square)](https://codeclimate.com/github/beevelop/ng-stomp)
 [![Gemnasium](https://img.shields.io/gemnasium/beevelop/ng-stomp.svg?style=flat-square)](https://gemnasium.com/beevelop/ng-stomp)
+[![npm](https://img.shields.io/npm/l/ng-stomp.svg?style=flat-square)](http://www.wtfpl.net/txt/copying/)
+[![Beevelop](https://links.beevelop.com/honey-badge)](https://beevelop.com)
 
 # ngStomp
 
