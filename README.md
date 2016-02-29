@@ -3,7 +3,7 @@
 [![Travis](https://img.shields.io/travis/beevelop/ng-stomp.svg?style=flat-square)](https://travis-ci.org/beevelop/ng-stomp)
 [![Code Climate](https://img.shields.io/codeclimate/github/beevelop/ng-stomp.svg?style=flat-square)](https://codeclimate.com/github/beevelop/ng-stomp)
 [![Gemnasium](https://img.shields.io/gemnasium/beevelop/ng-stomp.svg?style=flat-square)](https://gemnasium.com/beevelop/ng-stomp)
-[![npm](https://img.shields.io/npm/l/ng-stomp.svg?style=flat-square)](http://www.wtfpl.net/txt/copying/)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 [![Beevelop](https://links.beevelop.com/honey-badge)](https://beevelop.com)
 
 # ngStomp
@@ -12,73 +12,83 @@
 
 ## Installation
 
-#### Install via Bower:
+### Install via Bower:
 ```bash
 bower install --save ng-stomp
 ```
+
+#### Add standalone version (dependencies included)
+```html
+<script src="bower_components/ng-stomp/ng-stomp.standalone.min.js"></script>
+```
+
+#### Add SockJS + STOMP + (minified) ngStomp:
+```html
+<script src="bower_components/sockjs/sockjs.min.js"></script>
+<script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+<script src="bower_components/ng-stomp/ng-stomp.min.js"></script>
+```
 ----
-#### Install via npm:
+
+### Install via npm:
 ```bash
 npm install --save ng-stomp
 ```
-----
+
+#### Add standalone version (dependencies included)
+```html
+<script src="node_modules/ng-stomp/ng-stomp.standalone.min.js"></script>
+```
+
 #### Add SockJS + STOMP + (minified) Stompie:
 ```html
-<script src="/bower_components/sockjs/sockjs.min.js"></script>
-<script src="/bower_components/stomp-websocket/lib/stomp.min.js"></script>
-<script src="/bower_components/ng-stomp/ng-stomp.min.js"></script>
+<script src="node_modules/sockjs/sockjs.min.js"></script>
+<script src="node_modules/stompjs/lib/stomp.min.js"></script>
+<script src="node_modules/ng-stomp/ng-stomp.min.js"></script>
 ```
 ----
-#### Declare the module as a dependency in your application:
-```js
-angular.module('yourApp', ['ngStomp']);
-```
 
 ## Usage
-
 Inject it in your controller:
 ```js
 angular
-    .module('app')
-    .controller('Ctrl', ['$stomp', '$scope', function ($stomp, $scope) {
-        // ...
-    }
-```
+  // Declare ngStomp as a dependency for you module
+  .module('app', ['ngStomp'])
 
-## Example
-Use and subscribe:
-```js
-// redirect debug
-$stomp.setDebug(function (args) {
-    document.getElementById('log').value += args + '\n';
-});
+  // use $stomp in your controllers, services, directives,...
+  .controller('Ctrl', function ($stomp, $scope, $log) {
+    $stomp.setDebug(function (args) {
+      $log.debug(args)
+    })
 
-$stomp
-    .connect('/endpoint', connectHeaders)
+    $stomp
+      .connect('/endpoint', connectHeaders)
 
-    // frame = CONNECTED headers
-    .then(function (frame) {
-
+      // frame = CONNECTED headers
+      .then(function (frame) {
         var subscription = $stomp.subscribe('/dest', function (payload, headers, res) {
-            $scope.payload = payload;
+          $scope.payload = payload
         }, {
-            "headers": "are awesome"
-        });
+          'headers': 'are awesome'
+        })
 
         // Unsubscribe
-        subscription.unsubscribe();
+        subscription.unsubscribe()
 
         // Send message
         $stomp.send('/dest', {
-            message: 'body'
+          message: 'body'
         }, {
-            priority: 9,
-            custom: 42 //Custom Headers
-        });
+          priority: 9,
+          custom: 42 // Custom Headers
+        })
 
         // Disconnect
         $stomp.disconnect(function () {
-
-        });
-    });
+          $log.info('disconnected')
+        })
+      })
+  })
 ```
+
+## API-Docs (TBD)

@@ -1,6 +1,6 @@
 {
   "name": "ng-stomp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "STOMP for AngularJS",
   "main": "ng-stomp.js",
   "dependencies": {
