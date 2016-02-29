@@ -1,2 +1,3 @@
 exclude_paths:
-- dist/**/*
+- "dist/ng-stomp.standalone.min.js"
+- "dist/ng-stomp.min.js"
