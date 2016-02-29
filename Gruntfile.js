@@ -15,12 +15,18 @@ module.exports = function (grunt) {
         }
       }
     },
-    jshint: {
-      all: ['*.js', '!*.min.js']
+    standard: {
+      options: {
+        format: true
+      },
+      app: {
+        src: ['ng-stomp.js']
+      }
     }
-  });
+  })
 
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.registerTask('default', ['jshint', 'uglify']);
-};
+  grunt.loadNpmTasks('grunt-contrib-uglify')
+  grunt.loadNpmTasks('grunt-contrib-jshint')
+  grunt.loadNpmTasks('grunt-standard')
+  grunt.registerTask('default', ['standard', 'uglify'])
+}
