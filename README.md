@@ -17,16 +17,16 @@
 bower install --save ng-stomp
 ```
 
-#### Add standalone version (dependencies included)
+#### Add standalone version (dependencies included) to your HTML file
 ```html
-<script src="bower_components/ng-stomp/ng-stomp.standalone.min.js"></script>
+<script src="bower_components/ng-stomp/dist/ng-stomp.standalone.min.js"></script>
 ```
 
-#### Add SockJS + STOMP + (minified) ngStomp:
+#### Or add SockJS + STOMP + (minified) ngStomp individually:
 ```html
 <script src="bower_components/sockjs/sockjs.min.js"></script>
 <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
-<script src="bower_components/ng-stomp/ng-stomp.min.js"></script>
+<script src="bower_components/ng-stomp/dist/ng-stomp.min.js"></script>
 ```
 ----
 
@@ -35,16 +35,16 @@ bower install --save ng-stomp
 npm install --save ng-stomp
 ```
 
-#### Add standalone version (dependencies included)
+#### Add standalone version (dependencies included) to your HTML file
 ```html
-<script src="node_modules/ng-stomp/ng-stomp.standalone.min.js"></script>
+<script src="node_modules/ng-stomp/dist/ng-stomp.standalone.min.js"></script>
 ```
 
-#### Add SockJS + STOMP + (minified) Stompie:
+#### Or add SockJS + STOMP + (minified) Stompie individually:
 ```html
 <script src="node_modules/sockjs/sockjs.min.js"></script>
 <script src="node_modules/stompjs/lib/stomp.min.js"></script>
-<script src="node_modules/ng-stomp/ng-stomp.min.js"></script>
+<script src="node_modules/ng-stomp/dist/ng-stomp.min.js"></script>
 ```
 ----
 
@@ -92,3 +92,11 @@ angular
 ```
 
 ## API-Docs (TBD)
+- setDebug(callback)
+- connect(endpoint, headers)
+- disconnect
+- subscribe(destination, callback, headers)
+- on(destination, callback, headers)
+- unsubscribe(subscription)
+- off(subscription)
+- send(destination, body, headers)

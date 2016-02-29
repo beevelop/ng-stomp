@@ -1,12 +1,12 @@
 {
   "name": "ng-stomp",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/beevelop/ng-stomp",
   "authors": [
     "Maik Hummel <m@ikhummel.com>"
   ],
   "description": "STOMP for AngularJS",
-  "main": "ng-stomp.js",
+  "main": "src/ng-stomp.js",
   "keywords": [
     "STOMP",
     "websockets"

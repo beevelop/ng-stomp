@@ -6,11 +6,11 @@ module.exports = function (grunt) {
           preserveComments: 'some'
         },
         files: {
-          'ng-stomp.min.js': ['ng-stomp.js'],
-          'ng-stomp.standalone.min.js': [
+          'dist/ng-stomp.min.js': ['src/ng-stomp.js'],
+          'dist/ng-stomp.standalone.min.js': [
             'bower_components/sockjs/sockjs.min.js',
             'bower_components/stomp-websocket/lib/stomp.min.js',
-            'ng-stomp.js'
+            'src/ng-stomp.js'
           ]
         }
       }
@@ -26,7 +26,6 @@ module.exports = function (grunt) {
   })
 
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-contrib-jshint')
   grunt.loadNpmTasks('grunt-standard')
   grunt.registerTask('default', ['standard', 'uglify'])
 }
