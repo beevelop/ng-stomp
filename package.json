@@ -8,8 +8,8 @@
     "stompjs": "^2.3.3"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-uglify": "^0.11.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
     "grunt-standard": "^2.0.0"
   },
   "scripts": {
