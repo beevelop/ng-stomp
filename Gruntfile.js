@@ -8,7 +8,7 @@ module.exports = function (grunt) {
         files: {
           'dist/ng-stomp.min.js': ['src/ng-stomp.js'],
           'dist/ng-stomp.standalone.min.js': [
-            'bower_components/sockjs/sockjs.min.js',
+            'bower_components/sockjs-client/dist/sockjs.min.js',
             'bower_components/stomp-websocket/lib/stomp.min.js',
             'src/ng-stomp.js'
           ]
