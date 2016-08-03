@@ -22,7 +22,7 @@ angular
         this.debug = callback
       }
 
-      this.connect = function (endpoint, headers) {
+      this.connect = function (endpoint, headers, errorCallback) {
         headers = headers || {}
 
         var dfd = $q.defer()
@@ -33,7 +33,7 @@ angular
         this.stomp.connect(headers, function (frame) {
           dfd.resolve(frame)
         }, function (err) {
-          dfd.reject(err)
+          errorCallback(err)
         })
 
         return dfd.promise
