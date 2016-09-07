@@ -6,7 +6,7 @@
   "dependencies": {
     "angular": "~1.5.0",
     "sockjs-client": "~1.1.1",
-    "stompjs": "~2.3.3",
+    "stompjs": "~2.3.3"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
