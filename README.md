@@ -48,6 +48,19 @@ npm install --save ng-stomp
 ```
 ----
 
+### Install via npm (Webpack & ES6 imports):
+```bash
+npm install --save ng-stomp
+```
+```js
+import ngStomp from 'ng-stomp';
+
+angular
+  // Declare ngStomp as a dependency for you module
+  .module('app', ngStomp)
+```
+----
+
 ## Usage
 Inject it in your controller:
 ```js
