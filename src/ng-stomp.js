@@ -6,22 +6,19 @@
  * @license MIT
  */
 (function (root, factory) {
-  'use strict';
+  'use strict'
 
   if (false && typeof define === 'function' && define.amd) {
-    define(['angular', 'sockjs-client', 'stompjs'], factory);
-
+    define(['angular', 'sockjs-client', 'stompjs'], factory)
   } else if (typeof module !== 'undefined' && typeof module.exports === 'object') {
-    module.exports = factory(require('angular'), require('sockjs-client'), require('stompjs'));
-
+    module.exports = factory(require('angular'), require('sockjs-client'), require('stompjs'))
   } else {
-    return factory(root.angular, root.SockJS, root.Stomp);
+    return factory(root.angular, root.SockJS, root.Stomp)
   }
-
 }(window, function (angular, SockJS, Stomp) {
-  'use strict';
+  'use strict'
 
-  var moduleName = 'ngStomp';
+  var moduleName = 'ngStomp'
 
   angular
     .module(moduleName, [])
@@ -92,5 +89,5 @@
       }]
   )
 
-  return moduleName;
-}));
+  return moduleName
+}))
