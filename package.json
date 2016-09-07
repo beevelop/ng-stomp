@@ -3,6 +3,11 @@
   "version": "0.2.0",
   "description": "STOMP for AngularJS",
   "main": "src/ng-stomp.js",
+  "dependencies": {
+    "angular": "~1.5.0",
+    "sockjs-client": "~1.1.1",
+    "stompjs": "~2.3.3",
+  },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
