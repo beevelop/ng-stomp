@@ -84,7 +84,7 @@ angular
         })
 
         // Disconnect
-        $stomp.disconnect(function () {
+        $stomp.disconnect().then(function () {
           $log.info('disconnected')
         })
       })
