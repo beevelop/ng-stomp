@@ -6,6 +6,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
+    "grunt-file-exists": "^0.1.4",
     "grunt-standard": "^2.0.0"
   },
   "scripts": {

@@ -1,5 +1,14 @@
 module.exports = function (grunt) {
+  var standaloneFiles = [
+    'bower_components/sockjs-client/dist/sockjs.min.js',
+    'bower_components/stomp-websocket/lib/stomp.min.js',
+    'src/ng-stomp.js'
+  ]
+
   grunt.initConfig({
+    fileExists: {
+      scripts: standaloneFiles
+    },
     uglify: {
       main: {
         options: {
@@ -7,11 +16,7 @@ module.exports = function (grunt) {
         },
         files: {
           'dist/ng-stomp.min.js': ['src/ng-stomp.js'],
-          'dist/ng-stomp.standalone.min.js': [
-            'bower_components/sockjs-client/dist/sockjs.min.js',
-            'bower_components/stomp-websocket/lib/stomp.min.js',
-            'src/ng-stomp.js'
-          ]
+          'dist/ng-stomp.standalone.min.js': standaloneFiles
         }
       }
     },
@@ -25,7 +30,8 @@ module.exports = function (grunt) {
     }
   })
 
+  grunt.loadNpmTasks('grunt-file-exists')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-standard')
-  grunt.registerTask('default', ['standard', 'uglify'])
+  grunt.registerTask('default', ['standard', 'fileExists', 'uglify'])
 }
