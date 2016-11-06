@@ -34,7 +34,9 @@ angular
           dfd.resolve(frame)
         }, function (err) {
           dfd.reject(err)
-          errorCallback(err)
+          if (angular.isFunction(errorCallback)) {
+              errorCallback(err);
+          }
         })
 
         return dfd.promise
