@@ -9,6 +9,8 @@
 /*global
     angular, SockJS, Stomp */
 
+(function() {
+
 angular
   .module('ngStomp', [])
   .service('$stomp', [
@@ -80,3 +82,4 @@ angular
       }
     }]
 )
+}());
