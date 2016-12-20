@@ -4,7 +4,7 @@
   "description": "STOMP for AngularJS",
   "main": "src/ng-stomp.js",
   "dependencies": {
-    "angular": "~1.5.0",
+    "angular": ">= 1.5.0",
     "sockjs-client": "~1.1.1",
     "stompjs": "~2.3.3"
   },
