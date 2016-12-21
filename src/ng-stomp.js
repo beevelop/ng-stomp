@@ -22,12 +22,12 @@ angular
         this.debug = callback
       }
 
-      this.connect = function (endpoint, headers, errorCallback) {
+      this.connect = function (endpoint, headers, errorCallback, options) {
         headers = headers || {}
 
         var dfd = $q.defer()
 
-        this.sock = new SockJS(endpoint)
+        this.sock = new SockJS(endpoint, null, options)
         this.stomp = Stomp.over(this.sock)
         this.stomp.debug = this.debug
         this.stomp.connect(headers, function (frame) {
