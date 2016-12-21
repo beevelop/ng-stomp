@@ -28,9 +28,9 @@ angular
         var dfd = $q.defer()
 
         this.sock = new SockJS(endpoint)
-        this.sock.onclose = function() {
+        this.sock.onclose = function () {
           if (angular.isFunction(errorCallback)) {
-              errorCallback(new Error('Connection broken'))
+            errorCallback(new Error('Connection broken'))
           }
         }
 
@@ -41,7 +41,7 @@ angular
         }, function (err) {
           dfd.reject(err)
           if (angular.isFunction(errorCallback)) {
-              errorCallback(err)
+            errorCallback(err)
           }
         })
 
