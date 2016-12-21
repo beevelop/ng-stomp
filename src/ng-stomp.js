@@ -17,9 +17,14 @@ angular
       this.sock = null
       this.stomp = null
       this.debug = null
+      this.scopedApply = false
 
       this.setDebug = function (callback) {
         this.debug = callback
+      }
+
+      this.setScopedApply = function (apply) {
+        this.scopedApply = apply
       }
 
       this.connect = function (endpoint, headers, errorCallback) {
@@ -30,12 +35,19 @@ angular
         this.sock = new SockJS(endpoint)
         this.stomp = Stomp.over(this.sock)
         this.stomp.debug = this.debug
+        var us = this
         this.stomp.connect(headers, function (frame) {
           dfd.resolve(frame)
         }, function (err) {
           dfd.reject(err)
           if (angular.isFunction(errorCallback)) {
-              errorCallback(err);
+            if (us.scopedApply) {
+              $rootScope.$apply(function() {
+                errorCallback(err)
+              })
+            } else {
+              errorCallback(err)
+            }
           }
         })
 
@@ -50,13 +62,20 @@ angular
 
       this.subscribe = this.on = function (destination, callback, headers) {
         headers = headers || {}
+        var us = this
         return this.stomp.subscribe(destination, function (res) {
           var payload = null
           try {
             payload = JSON.parse(res.body)
           } finally {
-            if (callback) {
-              callback(payload, res.headers, res)
+            if (angular.isFunction(callback)) {
+              if (us.scopedApply) {
+                $rootScope.$apply(function() {
+                  callback(payload, res.headers, res)
+                });
+              } else {
+                callback(payload, res.headers, res)
+              }
             }
           }
         }, headers)
