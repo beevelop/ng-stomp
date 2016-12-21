@@ -42,7 +42,7 @@ angular
           dfd.reject(err)
           if (angular.isFunction(errorCallback)) {
             if (us.scopedApply) {
-              $rootScope.$apply(function() {
+              $rootScope.$apply(function () {
                 errorCallback(err)
               })
             } else {
@@ -70,9 +70,9 @@ angular
           } finally {
             if (angular.isFunction(callback)) {
               if (us.scopedApply) {
-                $rootScope.$apply(function() {
+                $rootScope.$apply(function () {
                   callback(payload, res.headers, res)
-                });
+                })
               } else {
                 callback(payload, res.headers, res)
               }
