@@ -28,6 +28,12 @@ angular
         var dfd = $q.defer()
 
         this.sock = new SockJS(endpoint)
+        this.sock.onclose = function() {
+          if (angular.isFunction(errorCallback)) {
+              errorCallback(new Error('Connection broken'))
+          }
+        }
+
         this.stomp = Stomp.over(this.sock)
         this.stomp.debug = this.debug
         this.stomp.connect(headers, function (frame) {
@@ -35,7 +41,7 @@ angular
         }, function (err) {
           dfd.reject(err)
           if (angular.isFunction(errorCallback)) {
-              errorCallback(err);
+              errorCallback(err)
           }
         })
 
