@@ -22,12 +22,13 @@ angular
         this.debug = callback
       }
 
-      this.connect = function (endpoint, headers, errorCallback) {
+      this.connect = function (endpoint, headers, errorCallback, sockjsOpts) {
         headers = headers || {}
+        sockjsOpts = sockjsOpts || {}
 
         var dfd = $q.defer()
 
-        this.sock = new SockJS(endpoint)
+        this.sock = new SockJS(endpoint, null, sockjsOpts)
         this.sock.onclose = function () {
           if (angular.isFunction(errorCallback)) {
             errorCallback(new Error('Connection broken'))
