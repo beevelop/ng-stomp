@@ -6,7 +6,7 @@
  * @license MIT
  */
 
-/*global
+/* global
     angular, SockJS, Stomp */
 
 angular
