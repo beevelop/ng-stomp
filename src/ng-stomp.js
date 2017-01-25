@@ -1,7 +1,7 @@
 /**
  * ngStomp
  *
- * @version 0.3.0
+ * @version 0.4.0
  * @author Maik Hummel <m@ikhummel.com>
  * @license MIT
  */
