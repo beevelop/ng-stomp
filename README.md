@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0ccb40da3a2f43f190457adab605ffdf)](https://www.codacy.com/app/yo/ng-stomp?utm_source=github.com&utm_medium=referral&utm_content=beevelop/ng-stomp&utm_campaign=badger)
 [![npm](https://img.shields.io/npm/v/ng-stomp.svg?style=flat-square)](https://www.npmjs.com/package/ng-stomp)
 [![Bower](https://img.shields.io/bower/v/ng-stomp.svg?style=flat-square)](#bower)
 [![Travis](https://img.shields.io/travis/beevelop/ng-stomp.svg?style=flat-square)](https://travis-ci.org/beevelop/ng-stomp)
