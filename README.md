@@ -8,6 +8,8 @@
 
 # ngStomp
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/beevelop/ng-stomp.svg)](https://greenkeeper.io/)
+
 > [STOMP](http://jmesnil.net/stomp-websocket/doc/) promised for [AngularJS](https://angularjs.org)
 
 ## Installation
