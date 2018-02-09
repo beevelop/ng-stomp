@@ -19,19 +19,10 @@ module.exports = function (grunt) {
           'dist/ng-stomp.standalone.min.js': standaloneFiles
         }
       }
-    },
-    standard: {
-      options: {
-        format: true
-      },
-      app: {
-        src: ['ng-stomp.js']
-      }
     }
   })
 
   grunt.loadNpmTasks('grunt-file-exists')
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-standard')
-  grunt.registerTask('default', ['standard', 'fileExists', 'uglify'])
+  grunt.registerTask('default', ['fileExists', 'uglify'])
 }
