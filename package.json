@@ -5,7 +5,7 @@
   "main": "src/ng-stomp.js",
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
     "grunt-file-exists": "^0.1.4"
   },
   "scripts": {
@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/beevelop/ng-stomp/issues"
   },
-  "homepage": "https://github.com/beevelop/ng-stomp"
+  "homepage": "https://github.com/beevelop/ng-stomp",
+  "dependencies": {
+    "@stomp/stompjs": "^4.0.1",
+    "sockjs-client": "^1.1.4"
+  }
 }
